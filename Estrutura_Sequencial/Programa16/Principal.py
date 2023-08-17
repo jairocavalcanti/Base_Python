@@ -6,6 +6,7 @@
 
 import math
 
+print()
 
 capacidade_lata_de_tinta = 18;
 cobertura_por_litro = 3  
@@ -19,6 +20,7 @@ litros_necessarios = (metrosquadrados/cobertura_por_litro)
 latas_necessarias = math.ceil(litros_necessarios/capacidade_lata_de_tinta)
 preco_total = (latas_necessarias*preco)
 
+print()
 
 print("Litros necessarios: " , litros_necessarios)
 print("Latas necessarias: ", latas_necessarias)
