@@ -37,7 +37,7 @@ preco_latas_de_tinta = (quantidade_latas_de_tinta*80)
 preco_galoes_de_tinta = (quantidade_galoes_de_tinta*25)
 preco_tintas_mascladas = (tintas_mescladas*105)
 
-print("Preço a ser pago pelas LATAS de tinta: " , preco_latas_de_tinta , "R$")
-print("Preço a ser pago pelos GALOES de tinta: " , preco_galoes_de_tinta , "R$")
-print("Preco a ser pago pela tinta MESCLADA: " , preco_tintas_mascladas, "R$")
+print("Preço a ser pago pelas LATAS de tinta: " , preco_latas_de_tinta , "R$ ")
+print("Preço a ser pago pelos GALOES de tinta: " , preco_galoes_de_tinta , "R$ ")
+print("Preco a ser pago pela tinta MESCLADA: " , preco_tintas_mascladas, "R$ ")
 
