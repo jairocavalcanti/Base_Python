@@ -9,7 +9,11 @@ numero = int(input("Insira um número: "))
 a, b = 0, 1
 cont = 0
 
+print(a)
+print(b)
+
 while cont < numero:
     print(a, end=' ')
-    a, b = b, a + b
+    # 0 , 1 = 1 , 0 + 1 
+    a, b = b, a + b 
     cont += 1
