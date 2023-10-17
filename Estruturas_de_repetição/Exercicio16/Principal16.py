@@ -1,7 +1,7 @@
 # Faça um programa em Python que leia dados de 4 pessoas. Os dados são: nome, idade e
 # sexo. Depois mostre a média aritmética das idades, o nome e a idade da pessoa mais velha e
 # o nome das mulheres abaixo de 20 anos.
-# 3
+
 
 limitador = 4
 maior_idade = 0
