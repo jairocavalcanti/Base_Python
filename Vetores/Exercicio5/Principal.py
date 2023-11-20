@@ -39,4 +39,4 @@ else:
     print("Quantidade de vezes que a letra ","a"," apareceu no vetor: " , cont2)
 
 print("Quantidade de sequencias de letras : " , cont3)
-print(vetor2) 
+print("Letras que apareceram em sequencia : " , vetor2) 
