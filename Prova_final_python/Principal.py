@@ -1,5 +1,8 @@
 
-vetor = ["Mercedes-Benz O500", "Volvo B7R", "Scania K-series", "MAN Lion's Coach"]
+vetor_veiculos = ["Mercedes-Benz O500", "Volvo B7R", "Scania K-series", "MAN Lion's Coach 700", "Marcopolo Paradiso 1800 DD G7",
+         "Mercedes-Benz O500RSD" ,"Van Hool TDX25 Astromega"," Irizar i8 "," Setra S 431 DT ","MAN Lion's Coach",
+         "Temsa Safari HD","Irizar PB","Volvo 9700","Yutong ZK6129H", "Alexander Dennis Enviro500","Neoplan Cityliner",
+         "Marcopolo Viaggio G7 1050","Solaris InterUrbino", "VDL Futura FHD2", "MCI J4500" , "Volvo B8R"]
 
 cont = 0
 matriz_cheia = False
@@ -10,10 +13,27 @@ while True:
    print(" ---------------------------------")
    print(" ------ MODELOS DISPONÍVEIS ------ \n",
       "--------------------------------- \n",
-      "  #0 - Mercedes-Benz O500  \n",
-      "  #1 - Volvo B7R   \n",
-      "  #2 - Scania K-series   \n", 
-      "  #3 = MAN Lion's Coach   \n",
+      "  #0  - Mercedes-Benz O50 \n",
+      "  #1  - Volvo B7R   \n",
+      "  #2  - Scania K-series    \n", 
+      "  #3  - MAN Lion's Coach   \n",
+      "  #4  - Marcopolo Paradiso 1800 DD G7  \n",
+      "  #5  - Mercedes-Benz O500RSD  \n",
+      "  #6  - Van Hool TDX25 Astromega  \n",
+      "  #7  - Irizar i8  \n",
+      "  #8  - Setra S 431 DT  \n",
+      "  #9  - MAN Lion's Coach 700  \n",
+      "  #10 - Temsa Safari HD \n",
+      "  #11 - Irizar PB \n",
+      "  #12 - Volvo 9700 \n",
+      "  #13 - Yutong ZK6129H \n",
+      "  #14 - Alexander Dennis Enviro500 \n",
+      "  #15 - Neoplan Cityliner \n",
+      "  #16 - Marcopolo Viaggio G7 1050 \n",
+      "  #17 - Solaris InterUrbino \n",
+      "  #18 - VDL Futura FHD2 \n",
+      "  #19 - MCI J4500 \n",
+      "  #20 - Volvo B8R \n"
       "---------------------------------",)
 
    while programa:
@@ -28,10 +48,13 @@ while True:
   
    while not programa:
   
-    escolha2 = int(input(" -- Insira uma opção: 1 - inserir dados // 2 - Mostrar dados // 3 - alterar dados // 4 - consulta especifica de dados // 0 - Encerrar --"))
+    print()
+    escolha2 = int(input(" -- Insira uma opção: 1 - inserir dados // 2 - Mostrar dados // 3 - alterar dados // 4 - consulta especifica de dados // 0 - Encerrar --  \n"))
   
-    if(escolha2 == 0):
+    if(escolha2 == 0): 
+      print("--------------------------")
       print("Programa encerrado...")
+      print("--------------------------")
       programa = True
     
 
@@ -50,7 +73,7 @@ while True:
             for j in range(colunas):
                 print("")
                 elemento = int(input(f"Insira a numeração (correspondente ao nome) do ônibus de posição #[{i}][{j}] da matriz: "))
-                matriz[i][j] = vetor[elemento]   
+                matriz[i][j] = vetor_veiculos[elemento]   
             
          matriz_cheia = True
          print("--------------------------------")
@@ -65,29 +88,25 @@ while True:
 
        cont = 0
 
-       for i in range(linhas):
-             print(f"Linha #{i + 1}: ", end='')  
-             for j in range(colunas):
-                print("[" , matriz[i][j], end = "]")
-             print()
-
-
        for elemento in matriz:
             print(f"Linha #{cont} -- {elemento}")
-       
+            cont += 1
        print("-------------------------------------------------------------")
       
       case 3:
     
        print("--------------------------------------------------------------------------")
     
-       linha2 = int(input("Insira a posição da [LINHA] do elemento: "))
-       coluna2 = int(input("Insira a posição da [COLUNA] do elemento: "))
+       linha2 = int(input("Insira a posição da [LINHA] do elemento que deseja alterar: "))
+       coluna2 = int(input("Insira a posição da [COLUNA] do elemento que deseja alterar: "))
     
        novo_elemento = int(input("Insira o novo valor: "))
     
-       matriz[linha2][coluna2] = vetor[novo_elemento]
-       
+       matriz[linha2][coluna2] = vetor_veiculos[novo_elemento]
+       print("--------------------------------")
+       print(f"Elemento da posição #[{linha2}][{coluna2}] alterado com sucesso!")
+       print("--------------------------------")
+  
        print("--------------------------------------------------------------------------")
        
       case 4:
