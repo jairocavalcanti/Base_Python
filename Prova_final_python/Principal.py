@@ -4,13 +4,6 @@ vetor = ["Mercedes-Benz O500", "Volvo B7R", "Scania K-series", "MAN Lion's Coach
 cont = 0
 matriz_cheia = False
 
-
-          #[[" ", " ", " "],
-          #[" ", " ", " "],
-          #[" ", " ", " "]]
-
-
-
 while True:
    programa = True
 
