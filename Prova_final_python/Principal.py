@@ -50,7 +50,7 @@ while True:
   
     print()
     escolha2 = int(input(" -- Insira uma opção: 1 - inserir dados // 2 - Mostrar dados // 3 - alterar dados // 4 - consulta especifica de dados // 0 - Encerrar --  \n"))
-  
+   
     if(escolha2 == 0): 
       print("--------------------------")
       print("Programa encerrado...")
@@ -75,10 +75,10 @@ while True:
                 elemento = int(input(f"Insira a numeração (correspondente ao nome) do ônibus de posição #[{i}][{j}] da matriz: "))
                 matriz[i][j] = vetor_veiculos[elemento]   
             
-         matriz_cheia = True
-         print("--------------------------------")
-         print("Dados inseridos com sucesso!")
-         print("--------------------------------")
+                matriz_cheia = True
+       print("--------------------------------")
+       print("Dados inseridos com sucesso!")
+       print("--------------------------------")
     
       case 2:
        
@@ -96,16 +96,20 @@ while True:
       case 3:
     
        print("--------------------------------------------------------------------------")
+       
+       if matriz_cheia != False:
+  
+             linha2 = int(input("Insira a posição da [LINHA] do elemento que deseja alterar: "))
+             coluna2 = int(input("Insira a posição da [COLUNA] do elemento que deseja alterar: "))
     
-       linha2 = int(input("Insira a posição da [LINHA] do elemento que deseja alterar: "))
-       coluna2 = int(input("Insira a posição da [COLUNA] do elemento que deseja alterar: "))
+             novo_elemento = int(input("Insira o novo valor: "))
     
-       novo_elemento = int(input("Insira o novo valor: "))
-    
-       matriz[linha2][coluna2] = vetor_veiculos[novo_elemento]
-       print("--------------------------------")
-       print(f"Elemento da posição #[{linha2}][{coluna2}] alterado com sucesso!")
-       print("--------------------------------")
+             matriz[linha2][coluna2] = vetor_veiculos[novo_elemento]
+             print("--------------------------------")
+             print(f"Elemento da posição #[{linha2}][{coluna2}] alterado com sucesso!")
+             print("--------------------------------")
+       else:
+         print("Matriz ainda nao preenchida!!")
   
        print("--------------------------------------------------------------------------")
        
@@ -124,18 +128,4 @@ while True:
        
        
        
-       
-       
-        #print()
-        
-        #linha2 = int(input("Insira a posição da linha do elemento: "))
-        #coluna2 = int(input("Insira a posição da coluna do elemento: "))
-        
-       # for i in range(linha2):
-         #   for j in range(coluna2):
-           #    novo = int(input("Insira: "))
-            #   matriz[i][j] = novo
-            
-            
-      
 
