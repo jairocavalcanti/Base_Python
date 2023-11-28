@@ -26,8 +26,5 @@ cont = 0
 for linha in matriz:
   cont += 1
   print(f"Notas do aluno {cont} :" ,linha)
-
-for i in range(len(matriz)):
-    print(matriz[i][j])
-    
+ 
 print(contador_de_notas)
