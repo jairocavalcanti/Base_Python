@@ -1,29 +1,58 @@
 vetor_ano = ["2003", "2013", "2023"]
+vetor_modelos = ["Iveco", "Volvo", "Scania"]
+ini_2 = False
 
-vetor_modelos = ["Iveco", "Volvo ", "Scania"]
+while True:
+    decisao = int(input("-- Pressione 1 para iniciar o programa -- "))
+    colunas = int(input("Insira quantas colunas deseja preencher na matriz: (1 á 3)"))
+    linhas = len(vetor_modelos)
+    matriz = [[" " for _ in range(linhas)] for _ in range(colunas)]
+    ini = False
 
+    while not ini:
+        print("Opções de operação com a matriz: 1 - Inserir dados // 2 - Mostrar dados // 0 - Encerrar programa")
+        opcoes = int(input(" -- Insira uma opção de operação com a matriz: "))
 
-inicio = True
-decisao = int(input("-- Pressione 1 para iniciar o programa -- "))
+        match opcoes:
+            case 0:
+                ini = True
+                print("--------------------------")
+                print("Programa encerrado...")
+                print("--------------------------")
 
+            case 1:
+                for j in range(linhas):
+                    print("---------------------------------------------------------")
+                    print(f"Insira as quantidades para o modelo [{vetor_modelos[j]}]")
+                    for i in range(colunas):
+                        quantidade = int(input(f"Quantidade de ônibus do tipo [{vetor_modelos[j]}] no ano [{vetor_ano[i]}]: "))
+                        matriz[i][j] = quantidade
 
-linhas = int(input("Insira quantos anos deseja preencher na matriz:"))
-matriz = [[" " for _ in range(len(vetor_modelos))]for _ in range(linhas)]
-colunas = len(vetor_modelos)
+            case 2:
+                matriz_cheia = True
+                for j in range(linhas):
+                    for i in range(colunas):
+                        if matriz[i][j] == " ":
+                            matriz_cheia = False
+                            break
 
-
-for j in range(colunas):
-    print("---------------------------------------------------------")
-    print(f"Insira as quantidades para o modelo [{vetor_modelos[j]}]")
-    for i in range(linhas):
-        quantidade = int(input(f"Quantidade de ônibus do tipo [{vetor_modelos[j]}] no ano [{vetor_ano[i]}]: "))
-        matriz[i][j] = quantidade
-
-print("        ","  ".join(vetor_ano))
-
-
-for j in range(colunas):
-    print(vetor_modelos[j], end = "   " )
-    for i in range(linhas):
-        print(f"{matriz[i][j]:4}", end = "   ")
-    print() 
+                    if not matriz_cheia:
+                        print("--------------------------")
+                        print("Matriz ainda não preenchida!")
+                        print("--------------------------")
+                        break
+                    else:
+                        print("        ", "  ".join(vetor_ano))
+                        for j in range(linhas):
+                            print(vetor_modelos[j], end="   ")
+                            for i in range(colunas):
+                                print(f"{matriz[i][j]:^4}", end="   ")
+                            print()
+                    break
+            case 3:
+                
+                  coluna = int (input("Insira o numero da coluna que deseja alterar: "))
+                  linha = int(input("Insira o numero da linha que deseja alterar na matriz: "))
+                 
+                  
+                 
