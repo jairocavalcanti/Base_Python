@@ -3,6 +3,10 @@ vetor_modelos = ["Iveco", "Volvo", "Scania"]
 ini_2 = False
 
 while True:
+    print()
+    print("// -- Programa para gerenciamento de dados em uma matriz python -- //")
+    print("Escrito por: Jairo , Arthur")
+    print("---------------------------")
     decisao = int(input("-- Pressione 1 para iniciar o programa -- \n"))
     colunas = 3
     linhas = len(vetor_modelos)
