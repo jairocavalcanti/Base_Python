@@ -4,14 +4,14 @@ ini_2 = False
 
 while True:
     decisao = int(input("-- Pressione 1 para iniciar o programa -- \n"))
-    colunas = int(input("Insira quantas colunas deseja preencher na matriz (1 á 3): "))
+    colunas = 3
     linhas = len(vetor_modelos)
     matriz = [[" " for _ in range(linhas)] for _ in range(colunas)]
     ini = False
     matriz_cheia2 = False
    
     while not ini:
-        print("Opções de operação com a matriz: 1 - Inserir dados // 2 - Mostrar dados // 3 - Alterar elemento // 4 - Mostrar dado especifico // 0 - Encerrar programa")
+        print("Opções de operação com a matriz: 1 - Inserir dados // 2 - Mostrar dados // 3 - Alterar elemento // 4 - Buscar elemento especifico // 0 - Encerrar programa")
         opcoes = int(input(" -- Insira uma opção de operação com a matriz: "))
 
         match opcoes:
@@ -37,17 +37,16 @@ while True:
                 if not matriz_cheia_3:
                    for j in range(linhas):
                       print("---------------------------------------------------------")
-                      print(" -- ! Pressione 0 para encerrar o preenchimento das colunas ! --")
+                      print(" -- Pressione 0 para encerrar o preenchimento -- ")
                       print()
                       print(f"Insira as quantidades para o modelo [{vetor_modelos[j]}]")
                       for i in range(colunas):
-                        quantidade = int(input(f"Quantidade de ônibus do tipo [{vetor_modelos[j]}] fabricados no ano [{vetor_ano[i]}]: "))
+                        quantidade = int(input(f"Quantidade de ônibus do tipo [{vetor_modelos[j]}] no ano [{vetor_ano[i]}]: "))
                         if quantidade == 0:
-                            matriz_cheia2 = True
                             break
                         else:                           
                          matriz[i][j] = quantidade
-                   matriz_cheia2 = True
+                         matriz_cheia2 = True
                    print("---------------------------------------------------------------")
                 else:
                     print("--------------------------")
@@ -63,7 +62,7 @@ while True:
                             matriz_cheia = False
                             break
 
-                    if not matriz_cheia:
+                    if not matriz_cheia2:
                         print("--------------------------")
                         print("Matriz ainda não preenchida!")
                         print("--------------------------")
@@ -89,7 +88,7 @@ while True:
                   linha = int(input("Insira o numero da [linha] que deseja alterar na matriz: "))
                   
                   
-                  nova_quantidade = int(input(f"Insira a nova quantidade da posição [{linha}] [{coluna}] da matriz :"))
+                  nova_quantidade = int(input(f"Insira a nova quantidade da posição Linha: [{linha}][{vetor_modelos[linha]}] Coluna: [{coluna}][{vetor_ano[coluna]}] da matriz :"))
                   
                   matriz[coluna][linha] = nova_quantidade
                   
@@ -113,7 +112,7 @@ while True:
                 
                  elemento = matriz[coluna][linha]
                  
-                 print(f"Elemento da posição [{linha}] [{coluna}] da matriz: " , elemento)
+                 print(f"Elemento da posição Linha: [{linha}][{vetor_modelos[linha]}] Coluna: [{coluna}][{vetor_ano[coluna]}] da matriz: " , elemento)
                  print("---------------------------------------------------------------")
             
                else:
