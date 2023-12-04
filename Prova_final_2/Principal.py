@@ -3,8 +3,8 @@ vetor_modelos = ["Iveco", "Volvo", "Scania"]
 ini_2 = False
 
 while True:
-    decisao = int(input("-- Pressione 1 para iniciar o programa -- "))
-    colunas = int(input("Insira quantas colunas deseja preencher na matriz: (1 á 3)"))
+    decisao = int(input("-- Pressione 1 para iniciar o programa -- \n"))
+    colunas = int(input("Insira quantas colunas deseja preencher na matriz (1 á 3): "))
     linhas = len(vetor_modelos)
     matriz = [[" " for _ in range(linhas)] for _ in range(colunas)]
     ini = False
@@ -15,7 +15,9 @@ while True:
         opcoes = int(input(" -- Insira uma opção de operação com a matriz: "))
 
         match opcoes:
+           
             case 0:
+              
                 ini = True
                 print("--------------------------")
                 print("Programa encerrado...")
@@ -40,10 +42,14 @@ while True:
                         quantidade = int(input(f"Quantidade de ônibus do tipo [{vetor_modelos[j]}] no ano [{vetor_ano[i]}]: "))
                         matriz[i][j] = quantidade
                    matriz_cheia2 = True
+                   print("---------------------------------------------------------------")
                 else:
+                    print("--------------------------")
                     print("Matriz ja preenchida!")        
-                        
+                    print("--------------------------")    
+            
             case 2:
+              
                 matriz_cheia = True
                 for j in range(linhas):
                     for i in range(colunas):
@@ -68,11 +74,12 @@ while True:
                             print()
                             print("--------------------------")
                     break
+            
             case 3:
                
                 if matriz_cheia2:
                   print("---------------------------------------------------------------")
-                  coluna = int (input("Insira o numero da [coluna] que deseja alterar: "))
+                  coluna = int (input("Insira o numero da [coluna] que deseja alterar na matriz: "))
                   linha = int(input("Insira o numero da [linha] que deseja alterar na matriz: "))
                   
                   
@@ -90,8 +97,28 @@ while True:
                      print("--------------------------")
                      print("Impossivel alterar, Matriz ainda não preenchida!")
                      print("--------------------------")
-                    
-                    
+            
+            case 4: 
+               
+               if matriz_cheia2:
+                 print("---------------------------------------------------------------")
+                 coluna = int (input("Insira o numero da [coluna] que deseja buscar na matriz: "))
+                 linha = int(input("Insira o numero da [linha] que deseja buscar na matriz: "))      
+                
+                 elemento = matriz[coluna][linha]
+                 
+                 print(f"Elemento da posição [{linha}] [{coluna}] da matriz: " , elemento)
+                 print("---------------------------------------------------------------")
+            
+               else:
+                     print("--------------------------")
+                     print("Impossivel buscar, Matriz ainda não preenchida!")
+                     print("--------------------------") 
+                
+                
+                
+                
+                        
                   
                    
                  
