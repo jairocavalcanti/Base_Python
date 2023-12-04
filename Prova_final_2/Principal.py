@@ -22,13 +22,27 @@ while True:
                 print("--------------------------")
 
             case 1:
+                
                 for j in range(linhas):
-                    print("---------------------------------------------------------")
-                    print(f"Insira as quantidades para o modelo [{vetor_modelos[j]}]")
                     for i in range(colunas):
+                        if matriz[i][j] != " ":
+                            matriz_cheia_3 = True
+                            break
+                        else:
+                            matriz_cheia_3 = False
+                            break
+               
+                if not matriz_cheia_3:
+                   for j in range(linhas):
+                      print("---------------------------------------------------------")
+                      print(f"Insira as quantidades para o modelo [{vetor_modelos[j]}]")
+                      for i in range(colunas):
                         quantidade = int(input(f"Quantidade de ônibus do tipo [{vetor_modelos[j]}] no ano [{vetor_ano[i]}]: "))
                         matriz[i][j] = quantidade
-
+                   matriz_cheia2 = True
+                else:
+                    print("Matriz ja preenchida!")        
+                        
             case 2:
                 matriz_cheia = True
                 for j in range(linhas):
@@ -45,7 +59,6 @@ while True:
                     else:
                         print()
                         print("---------------- MATRIZ ----------------")
-                        matriz_cheia2 = True
                         print("--------------------------")
                         print("        ", "  ".join(vetor_ano))
                         for j in range(linhas):
@@ -58,22 +71,24 @@ while True:
             case 3:
                
                 if matriz_cheia2:
-                  coluna = int (input("Insira o numero da coluna que deseja alterar: "))
-                  linha = int(input("Insira o numero da linha que deseja alterar na matriz: "))
+                  print("---------------------------------------------------------------")
+                  coluna = int (input("Insira o numero da [coluna] que deseja alterar: "))
+                  linha = int(input("Insira o numero da [linha] que deseja alterar na matriz: "))
                   
                   
-                  nova_quantidade = int(input(f"Insira a nova quantidade da posição {linha}{coluna} :"))
+                  nova_quantidade = int(input(f"Insira a nova quantidade da posição [{linha}] [{coluna}] da matriz :"))
                   
-                  matriz[linha][coluna] = nova_quantidade
+                  matriz[coluna][linha] = nova_quantidade
                   
                   print("--------------------------")
                   print("Elemento alterado com sucesso!")
                   print("--------------------------")
-                    
+                  
+                  print("---------------------------------------------------------------")  
                 
                 else:
                      print("--------------------------")
-                     print("Matriz ainda não preenchida!")
+                     print("Impossivel alterar, Matriz ainda não preenchida!")
                      print("--------------------------")
                     
                     
