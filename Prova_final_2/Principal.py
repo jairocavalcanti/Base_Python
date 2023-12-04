@@ -8,9 +8,10 @@ while True:
     linhas = len(vetor_modelos)
     matriz = [[" " for _ in range(linhas)] for _ in range(colunas)]
     ini = False
-
+    matriz_cheia2 = False
+   
     while not ini:
-        print("Opções de operação com a matriz: 1 - Inserir dados // 2 - Mostrar dados // 0 - Encerrar programa")
+        print("Opções de operação com a matriz: 1 - Inserir dados // 2 - Mostrar dados // 3 - Alterar elemento // 0 - Encerrar programa")
         opcoes = int(input(" -- Insira uma opção de operação com a matriz: "))
 
         match opcoes:
@@ -42,17 +43,43 @@ while True:
                         print("--------------------------")
                         break
                     else:
+                        print()
+                        print("---------------- MATRIZ ----------------")
+                        matriz_cheia2 = True
+                        print("--------------------------")
                         print("        ", "  ".join(vetor_ano))
                         for j in range(linhas):
                             print(vetor_modelos[j], end="   ")
                             for i in range(colunas):
                                 print(f"{matriz[i][j]:^4}", end="   ")
                             print()
+                            print("--------------------------")
                     break
             case 3:
-                
+               
+                if matriz_cheia2:
                   coluna = int (input("Insira o numero da coluna que deseja alterar: "))
                   linha = int(input("Insira o numero da linha que deseja alterar na matriz: "))
+                  
+                  
+                  nova_quantidade = int(input(f"Insira a nova quantidade da posição {linha}{coluna} :"))
+                  
+                  matriz[linha][coluna] = nova_quantidade
+                  
+                  print("--------------------------")
+                  print("Elemento alterado com sucesso!")
+                  print("--------------------------")
+                    
+                
+                else:
+                     print("--------------------------")
+                     print("Matriz ainda não preenchida!")
+                     print("--------------------------")
+                    
+                    
+                  
+                   
+                 
                  
                   
                  
